@@ -49,10 +49,10 @@ function botonAgregarCarrito() {
 
             let carrito = JSON.parse(localStorage.getItem("productosCarrito")) || [];
 
-            const existente = carrito.findIndex(prod => prod.id === celularId);
+            const existente = carrito.find(prod => prod.id === celularId);
 
-            if (existente !== -1) {
-                carrito[existente].cantidad += cantidadElegida;
+            if (existente) {
+                existente.cantidad += cantidadElegida;
             } else {
                 const celularConCantidad = {
                     modelo: celularSeleccionado.modelo,
