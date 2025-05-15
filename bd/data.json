@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "modelo": "Galaxy A 54",
+        "marca": "Samsung",
+        "precio": 900000,
+        "imagen": "./imagenes/a-54.jpg"
+    },
+        {
+        "id": 2,
+        "modelo": "Galaxy S21 FE",
+        "marca": "Samsung",
+        "precio": 700000,
+        "imagen": "./imagenes/s21-fe.jpg"
+    },
+        {
+        "id": 3,
+        "modelo": "Galaxy S 23 Ultra",
+        "marca": "Samsung",
+        "precio": 850000,
+        "imagen": "./imagenes/s23-ultra.jpg"
+    },
+        {
+        "id": 4,
+        "modelo": "Galaxy S 24 Ultra",
+        "marca": "Samsung",
+        "precio": 1300000,
+        "imagen": "./imagenes/s-24-ultra.jfif"
+    },
+    {
+        "id": 5,
+        "modelo": "G 79",
+        "marca": "Motorola",
+        "precio": 800000,
+        "imagen": "./imagenes/moto-g-79.jfif"
+    },
+        {
+        "id": 6,
+        "modelo": "G 85",
+        "marca": "Motorola",
+        "precio": 950000,
+        "imagen": "./imagenes/moto-g-85.png"
+    },
+        {
+        "id": 7,
+        "modelo": "Y9",
+        "marca": "Huawei",
+        "precio": 800000,
+        "imagen": "./imagenes/huawei-y9.png"
+    },
+        {
+        "id": 8,
+        "modelo": "Redmi Note 12",
+        "marca": "Xiaomi",
+        "precio": 950000,
+        "imagen": "./imagenes/redmi-note-12.webp"
+    },
+        {
+        "id": 9,
+        "modelo": "Iphone 13",
+        "marca": "Apple",
+        "precio": 650000,
+        "imagen": "./imagenes/iphone-13.jpeg"
+    },
+        {
+        "id": 10,
+        "modelo": "Iphone 14",
+        "marca": "Apple",
+        "precio": 850000,
+        "imagen": "./imagenes/iphone-14.webp"
+    },
+        {
+        "id": 11,
+        "modelo": "Iphone 15",
+        "marca": "Apple",
+        "precio": 1200000,
+        "imagen": "./imagenes/iphone-15.webp"
+    },
+        {
+        "id": 12,
+        "modelo": "Iphone 16 PRO",
+        "marca": "Apple",
+        "precio": 1500000,
+        "imagen": "./imagenes/iphone-16-pro.jpg"
+    }
+]

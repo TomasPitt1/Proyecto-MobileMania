@@ -1,28 +1,18 @@
-class Celular {
-    static id = 0
-    constructor(modelo, marca, precio) {
-        this.id = ++Celular.id,
-            this.modelo = modelo,
-            this.marca = marca,
-            this.precio = precio
-    }
-}
-const celular1 = new Celular("Galaxy 54", "Samsung", 900000)
-const celular2 = new Celular("Iphone 15", "Apple", 1200000)
-const celular3 = new Celular("Iphone 16 PRO", "Apple", 1500000)
-const celular4 = new Celular("G 79", "Motorola", 800000)
-const celular5 = new Celular("Galaxy S21", "Samsung", 700000)
-const celular6 = new Celular("Redmi Note 12", "Xiaomi", 950000)
-
-const celulares = [celular1, celular2, celular3, celular4, celular5, celular6]
 
 let productosCarrito = JSON.parse(localStorage.getItem("productosCarrito")) || [];
 
-let productos = document.getElementById("productos")
-function renderProductos(celulares) {
-    celulares.forEach(celular => {
-        const card = document.createElement("div")
-        card.innerHTML = `<h3>${celular.modelo}</h3>
+let productos = document.getElementById("productos");
+let celulares = [];
+
+function renderProductos() {
+    fetch("./bd/data.json")
+        .then(response => response.json())
+        .then(data => {
+            celulares = data;
+            data.forEach(celular => {
+                const card = document.createElement("div")
+                card.innerHTML = `<img src="${celular.imagen}" alt="${celular.modelo}" class="img-producto">
+                            <h3>${celular.modelo}</h3>
                             <p>${celular.marca}</p>
                             <p>${celular.precio}</p>
                             <div>
@@ -31,10 +21,11 @@ function renderProductos(celulares) {
                             <button class="boton-sumar" data-id="${celular.id}">+</button>
             </div>
                             <button class="productoAgregar" id="${celular.id}">Agregar</button>`
-        productos.appendChild(card)
-    })
-    botonCantidad();
-    botonAgregarCarrito();
+                productos.appendChild(card)
+            })
+            botonCantidad();
+            botonAgregarCarrito();
+        })
 }
 renderProductos(celulares)
 
@@ -55,6 +46,7 @@ function botonAgregarCarrito() {
                 existente.cantidad += cantidadElegida;
             } else {
                 const celularConCantidad = {
+                    imagen: celularSeleccionado.imagen,
                     modelo: celularSeleccionado.modelo,
                     marca: celularSeleccionado.marca,
                     precio: celularSeleccionado.precio,
@@ -95,3 +87,5 @@ function botonCantidad() {
         };
     });
 }
+
+localStorage.clean()

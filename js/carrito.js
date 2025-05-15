@@ -6,7 +6,8 @@ storageCarrito = JSON.parse(storageCarrito)
 function renderCarrito(cartItems) {
     cartItems.forEach(celular => {
         const carrito = document.createElement("div")
-        carrito.innerHTML = `<h3>${celular.modelo}</h3>
+        carrito.innerHTML = `<img src="${celular.imagen}" alt="${celular.modelo}" class="img-producto">
+                            <h3>${celular.modelo}</h3>
                             <p>${celular.marca}</p>
                             <p>Precio unitario: ${celular.precio}</p>
                             <p>Cantidad: ${celular.cantidad}</p>
@@ -51,4 +52,3 @@ function botonEliminarCarrito() {
 }
 
 renderCarrito(storageCarrito)
-

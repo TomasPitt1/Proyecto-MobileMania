@@ -49,6 +49,11 @@ h1 {
     }
 }
 
+.img-producto{
+    width: 240px;
+    height: auto;
+}
+
 button{
     background-color: black;
     color:white;
