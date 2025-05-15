@@ -52,3 +52,27 @@ function botonEliminarCarrito() {
 }
 
 renderCarrito(storageCarrito)
+
+
+function botonDeCompra (){
+    const botonComprar = document.createElement("button")
+    botonComprar.className = "boton-comprar"
+    botonComprar.textContent = "Comprar"
+
+botonComprar.onclick = () => {
+Swal.fire({
+  title: "Queres continuar con la compra?",
+  showDenyButton: true,
+  confirmButtonText: "Si",
+  denyButtonText: `No`
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire("Compra realizada! El comprobante sera enviado a tu casilla de correo registrada", "", "success");
+  } else if (result.isDenied) {
+    Swal.fire("Podes seguir con el pago mas tarde!", "", "info");
+  }
+});
+}
+contendedorCarritoTotal.appendChild(botonComprar)
+}
+botonDeCompra()

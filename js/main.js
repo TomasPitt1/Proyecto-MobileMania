@@ -25,6 +25,7 @@ function renderProductos() {
             })
             botonCantidad();
             botonAgregarCarrito();
+            
         })
 }
 renderProductos(celulares)
@@ -53,8 +54,9 @@ function botonAgregarCarrito() {
                     id: celularSeleccionado.id,
                     cantidad: cantidadElegida,
                 };
-
+                
                 carrito.push(celularConCantidad);
+                Swal.fire("Producto agregado al carrito");
             }
 
             localStorage.setItem("productosCarrito", JSON.stringify(carrito));

@@ -81,6 +81,12 @@ button{
 }
 }
 
+.boton-comprar{
+        margin-top: 30px;
+    text-align: center;
+    align-items: center;
+}
+
 .beneficios{
     text-align: center;
     margin-top: 50px;
