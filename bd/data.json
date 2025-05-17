@@ -4,35 +4,35 @@
         "modelo": "Galaxy A 54",
         "marca": "Samsung",
         "precio": 900000,
-        "imagen": "./imagenes/a-54.jpg"
+        "imagen": "./imagenes/a-54.png"
     },
         {
         "id": 2,
         "modelo": "Galaxy S21 FE",
         "marca": "Samsung",
         "precio": 700000,
-        "imagen": "./imagenes/s21-fe.jpg"
+        "imagen": "./imagenes/s21-fe.avif"
     },
         {
         "id": 3,
         "modelo": "Galaxy S 23 Ultra",
         "marca": "Samsung",
         "precio": 850000,
-        "imagen": "./imagenes/s23-ultra.jpg"
+        "imagen": "./imagenes/s23-ultra.png"
     },
         {
         "id": 4,
         "modelo": "Galaxy S 24 Ultra",
         "marca": "Samsung",
         "precio": 1300000,
-        "imagen": "./imagenes/s-24-ultra.jfif"
+        "imagen": "./imagenes/s-24-ultra.jpg"
     },
     {
         "id": 5,
         "modelo": "G 79",
         "marca": "Motorola",
         "precio": 800000,
-        "imagen": "./imagenes/moto-g-79.jfif"
+        "imagen": "./imagenes/moto-g-79.png"
     },
         {
         "id": 6,
@@ -46,21 +46,21 @@
         "modelo": "Y9",
         "marca": "Huawei",
         "precio": 800000,
-        "imagen": "./imagenes/huawei-y9.png"
+        "imagen": "./imagenes/huawei-y9.jpg"
     },
         {
         "id": 8,
-        "modelo": "Redmi Note 12",
+        "modelo": "Redmi Note 14",
         "marca": "Xiaomi",
         "precio": 950000,
-        "imagen": "./imagenes/redmi-note-12.webp"
+        "imagen": "./imagenes/redmi-note-14.jpg"
     },
         {
         "id": 9,
         "modelo": "Iphone 13",
         "marca": "Apple",
         "precio": 650000,
-        "imagen": "./imagenes/iphone-13.jpeg"
+        "imagen": "./imagenes/iphone-13.png"
     },
         {
         "id": 10,
@@ -74,7 +74,7 @@
         "modelo": "Iphone 15",
         "marca": "Apple",
         "precio": 1200000,
-        "imagen": "./imagenes/iphone-15.webp"
+        "imagen": "./imagenes/iphone-15.png"
     },
         {
         "id": 12,

@@ -42,6 +42,18 @@ h1 {
     margin-right: 200px;
 }
 
+#seccion-carrito-botones{
+    margin-top: 40px;
+    align-items: center;
+    text-align: center;
+}
+.boton-vaciar-comprar{
+    margin: 30px;
+    font-size: 20px;
+    width: auto;
+    height: 40px;
+}
+
 #seccion-carrito{
     h3{
         text-align: center;
@@ -51,8 +63,10 @@ h1 {
 
 .img-producto{
     width: 240px;
-    height: auto;
+    height: 240px;
+    align-items: center;
 }
+
 
 button{
     background-color: black;
@@ -60,6 +74,7 @@ button{
     font-size: 18px;
     padding: 3px;
     margin-top: 10px;
+    font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .encabezado{

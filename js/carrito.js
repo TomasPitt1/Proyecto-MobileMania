@@ -1,4 +1,5 @@
 let contenedorCarrito = document.getElementById("seccion-carrito-productos")
+let contendedorBotones = document.getElementById("seccion-carrito-botones")
 let contendedorCarritoTotal = document.getElementById("seccion-carrito")
 let storageCarrito = localStorage.getItem("productosCarrito")
 storageCarrito = JSON.parse(storageCarrito)
@@ -56,7 +57,7 @@ renderCarrito(storageCarrito)
 
 function botonDeCompra (){
     const botonComprar = document.createElement("button")
-    botonComprar.className = "boton-comprar"
+    botonComprar.className = "boton-vaciar-comprar"
     botonComprar.textContent = "Comprar"
 
 botonComprar.onclick = () => {
@@ -73,6 +74,24 @@ Swal.fire({
   }
 });
 }
-contendedorCarritoTotal.appendChild(botonComprar)
+contendedorBotones.appendChild(botonComprar)
 }
 botonDeCompra()
+
+
+function botonVaciarCarrito (){
+    const botonVaciar = document.createElement("button")
+    botonVaciar.className = "boton-vaciar-comprar"
+    botonVaciar.textContent = "Vaciar Carrito"
+
+botonVaciar.onclick = () => {
+    localStorage.removeItem("productosCarrito");
+Swal.fire({
+  title: "Carrito vacio!",
+}).then(() => {
+    location.reload();
+  });
+};
+contendedorBotones.appendChild(botonVaciar)
+}
+botonVaciarCarrito()
