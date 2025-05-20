@@ -3,11 +3,12 @@
 <p>
 MobileManía es un simulador de una página e-commerce de celulares. El proyecto permite al usuario:
 </p>
-- Ver los productos.
-- Agregar productos al carrito con control de cantidad.
-- Visualizar el carrito con totales.
-- Eliminar productos del carrito.
-- Realizar la compra del carrito.
+
+- Ver los productos
+- Agregar productos al carrito con control de cantidad
+- Visualizar el carrito con totales
+- Eliminar productos del carrito
+- Realizar la compra del carrito
 <p>
 Podes probar el simulador ingresando al siguiente link:
 https://tomaspitt1.github.io/Proyecto-MobileMania/
