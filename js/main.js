@@ -4,14 +4,18 @@ let productosCarrito = JSON.parse(localStorage.getItem("productosCarrito")) || [
 let productos = document.getElementById("productos");
 let celulares = [];
 
-function renderProductos() {
-    fetch("./bd/data.json")
-        .then(response => response.json())
-        .then(data => {
-            celulares = data;
-            data.forEach(celular => {
-                const card = document.createElement("div")
-                card.innerHTML = `<img src="${celular.imagen}" alt="${celular.modelo}" class="img-producto">
+
+const renderProductos = async () => {
+    const usersError = "<span>No se pueden cargar los productos, intente mas tarde</span>"
+    let renderizado = ``
+
+    try {
+        let solicitud = await fetch("./bd/data.json")
+        let data = await solicitud.json()
+        celulares = data;
+        data.forEach(celular => {
+            const card = document.createElement("div")
+            card.innerHTML = `<img src="${celular.imagen}" alt="${celular.modelo}" class="img-producto">
                             <h3>${celular.modelo}</h3>
                             <p>${celular.marca}</p>
                             <p>${celular.precio}</p>
@@ -21,12 +25,15 @@ function renderProductos() {
                             <button class="boton-sumar" data-id="${celular.id}">+</button>
             </div>
                             <button class="productoAgregar" id="${celular.id}">Agregar</button>`
-                productos.appendChild(card)
-            })
-            botonCantidad();
-            botonAgregarCarrito();
-            
+            productos.appendChild(card)
         })
+        botonCantidad();
+        botonAgregarCarrito();
+
+    } catch (err) {
+        renderizado = usersError
+        document.body.innerHTML = renderizado
+    }
 }
 renderProductos(celulares)
 
@@ -54,7 +61,7 @@ function botonAgregarCarrito() {
                     id: celularSeleccionado.id,
                     cantidad: cantidadElegida,
                 };
-                
+
                 carrito.push(celularConCantidad);
                 Swal.fire("Producto agregado al carrito");
             }
@@ -89,5 +96,3 @@ function botonCantidad() {
         };
     });
 }
-
-localStorage.clean()
