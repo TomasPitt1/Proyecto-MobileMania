@@ -63,7 +63,20 @@ function botonAgregarCarrito() {
                 };
 
                 carrito.push(celularConCantidad);
-                Swal.fire("Producto agregado al carrito");
+                Toastify({
+                    text: "Producto agregado al carrito",
+                    duration: 1500,
+                    destination: "#",
+                    newWindow: true,
+                    close: false,
+                    gravity: "top",
+                    position: "center",
+                    stopOnFocus: false,
+                    style: {
+                        background: "white",
+                        color:"black"
+                    },
+                }).showToast();
             }
 
             localStorage.setItem("productosCarrito", JSON.stringify(carrito));
