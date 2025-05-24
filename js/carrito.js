@@ -1,6 +1,6 @@
 let contenedorCarrito = document.getElementById("seccion-carrito-productos")
-let contendedorBotones = document.getElementById("seccion-carrito-botones")
-let contendedorCarritoTotal = document.getElementById("seccion-carrito")
+let contenedorBotones = document.getElementById("seccion-carrito-botones")
+let contenedorCarritoTotal = document.getElementById("seccion-carrito")
 let storageCarrito = localStorage.getItem("productosCarrito")
 storageCarrito = JSON.parse(storageCarrito)
 
@@ -13,9 +13,15 @@ function renderCarrito(cartItems) {
                             <p>Precio unitario: ${celular.precio}</p>
                             <p>Cantidad: ${celular.cantidad}</p>
                             <p>Total: ${celular.precio * celular.cantidad}</p>
+                            <div>
+                            <button class="boton-restar" data-id="${celular.id}">-</button>
+                            <span id="contador-${celular.id}">1</span>
+                            <button class="boton-sumar" data-id="${celular.id}">+</button>
+                            </div>
                             <button class="productoEliminar" id="${celular.id}">Eliminar</button>`;
     contenedorCarrito.appendChild(carrito)
   })
+  botonCantidad();
   botonEliminarCarrito()
   calculoTotal(cartItems)
 }
@@ -35,8 +41,9 @@ function calculoTotal(cartItems) {
   } else {
     sumaTotal.textContent = `TOTAL: $${total}`;
   }
-  contendedorCarritoTotal.appendChild(sumaTotal)
+  contenedorCarritoTotal.appendChild(sumaTotal)
 }
+
 
 function botonEliminarCarrito() {
   const botonEliminar = document.querySelectorAll(".productoEliminar");
@@ -46,16 +53,48 @@ function botonEliminarCarrito() {
       const celularId = parseInt(e.currentTarget.id);
 
       let carrito = JSON.parse(localStorage.getItem("productosCarrito")) || [];
+      const contador = document.getElementById(`contador-${celularId}`);
+      const cantidadAEliminar = parseInt(contador.textContent);
 
-      carrito = carrito.filter(producto => producto.id !== celularId);
+      carrito = carrito.map(producto => {
+        if (producto.id === celularId) {
+          producto.cantidad -= cantidadAEliminar;
+        }
+        return producto;
+      }).filter(producto => producto.cantidad > 0);
 
       localStorage.setItem("productosCarrito", JSON.stringify(carrito));
-
       contenedorCarrito.innerHTML = "";
       renderCarrito(carrito);
     };
   });
 }
+
+function botonCantidad() {
+  const botonSumar = document.querySelectorAll(".boton-sumar");
+  const botonRestar = document.querySelectorAll(".boton-restar");
+
+  botonSumar.forEach(boton => {
+    boton.onclick = () => {
+      const id = boton.getAttribute("data-id");
+      const contador = document.getElementById(`contador-${id}`);
+      contador.textContent = parseInt(contador.textContent) + 1;
+    };
+  });
+
+  botonRestar.forEach(boton => {
+    boton.onclick = () => {
+      const id = boton.getAttribute("data-id");
+      const contador = document.getElementById(`contador-${id}`);
+      const valorActual = parseInt(contador.textContent);
+      if (valorActual > 1) {
+        contador.textContent = valorActual - 1;
+      }
+    };
+  });
+}
+
+
 
 renderCarrito(storageCarrito)
 
@@ -73,7 +112,7 @@ function botonVaciarCarrito() {
       title: "Carrito vacio!"
     });
   }
-  contendedorBotones.appendChild(botonVaciar)
+  contenedorBotones.appendChild(botonVaciar)
 }
 botonVaciarCarrito()
 
@@ -148,6 +187,6 @@ function botonDeCompra() {
       calculoTotal([]);
     })
   };
-  contendedorBotones.appendChild(botonComprar)
+  contenedorBotones.appendChild(botonComprar)
 }
 botonDeCompra()

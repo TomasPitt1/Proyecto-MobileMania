@@ -23,7 +23,7 @@ const renderProductos = async () => {
                             <button class="boton-restar" data-id="${celular.id}">-</button>
                             <span id="contador-${celular.id}">1</span>
                             <button class="boton-sumar" data-id="${celular.id}">+</button>
-            </div>
+                            </div>
                             <button class="productoAgregar" id="${celular.id}">Agregar</button>`
             productos.appendChild(card)
         })
@@ -39,8 +39,8 @@ renderProductos(celulares)
 
 
 function botonAgregarCarrito() {
-    addButton = document.querySelectorAll(".productoAgregar")
-    addButton.forEach(button => {
+    const botonAgregar = document.querySelectorAll(".productoAgregar")
+    botonAgregar.forEach(button => {
         button.onclick = (e) => {
             const celularId = parseInt(e.currentTarget.id);
             const celularSeleccionado = celulares.find(celular => celular.id == celularId)
