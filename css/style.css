@@ -2,8 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-header{
+}
+
+header {
     background-color: black;
     color: white;
     width: 100%;
@@ -13,15 +14,17 @@ header{
     padding-left: 10px;
     padding-right: 50px;
 }
-i{
-    color:white;
+
+i {
+    color: white;
 }
-body{
+
+body {
     background-color: rgb(202, 202, 181);
     font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.principal{
+.principal {
     text-align: center;
     margin-top: 25px;
 }
@@ -31,7 +34,8 @@ h1 {
     text-decoration: underline;
 }
 
-#productos, #seccion-carrito-productos{
+#productos,
+#seccion-carrito-productos {
     margin-top: 30px;
     gap: 100px;
     text-align: center;
@@ -42,82 +46,90 @@ h1 {
     margin-right: 200px;
 }
 
-#seccion-carrito-botones{
+#seccion-carrito-botones {
     margin-top: 40px;
     align-items: center;
     text-align: center;
 }
-.boton-vaciar-comprar{
+
+.boton-vaciar-comprar {
     margin: 30px;
     font-size: 20px;
     width: auto;
     height: 40px;
 }
 
-#seccion-carrito{
-    h3{
+#seccion-carrito {
+    h3 {
         text-align: center;
         margin-top: 10px;
     }
 }
 
-.img-producto{
+.img-producto {
     width: 240px;
     height: 240px;
     align-items: center;
 }
 
 
-button{
+button {
     background-color: black;
-    color:white;
+    color: white;
     font-size: 18px;
     padding: 3px;
     margin-top: 10px;
     font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.encabezado{
+.encabezado {
     height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.ver-productos{
+.ver-productos {
     margin-top: 30px;
     text-align: center;
-    a{
-    text-decoration: none;
-    background-color: black;
-    color:white;
-    border: 1px solid black;
-    padding: 4px;
-}
+
+    a {
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+        padding: 4px;
+    }
 }
 
-.boton-comprar{
-        margin-top: 30px;
+.boton-comprar {
+    margin-top: 30px;
     text-align: center;
     align-items: center;
 }
 
-.beneficios{
+.beneficios {
     text-align: center;
     margin-top: 50px;
     font-size: 20px;
 }
-.lista-beneficios{
+
+.lista-beneficios {
     text-align: center;
     margin-top: 10px;
 }
 
-footer{
-    margin-top: 25px;
-    background-color: black;
-    color:white;
-    padding: 15px;
-    li{
+.lista-comprados {
     list-style: none;
 }
+
+footer {
+    margin-top: 25px;
+    background-color: black;
+    color: white;
+    padding: 15px;
+
+    li {
+        list-style: none;
+    }
 }

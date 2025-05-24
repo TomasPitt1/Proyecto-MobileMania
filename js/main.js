@@ -73,8 +73,8 @@ function botonAgregarCarrito() {
                     position: "center",
                     stopOnFocus: false,
                     style: {
-                        background: "white",
-                        color:"black"
+                        background: "green",
+                        color: "black"
                     },
                 }).showToast();
             }
