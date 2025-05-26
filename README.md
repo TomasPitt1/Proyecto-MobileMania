@@ -34,3 +34,6 @@ https://tomaspitt1.github.io/Proyecto-MobileMania/
   └─ data.json (Base de datos de los productos)
 - imagenes (Imagenes utilizadas en el proyecto)
 - README.md (Resumen del Proyecto)
+
+
+<p>Aclaracion: La aplicacion debe correr adentro de un servidor para evitar problema de CORS.</p>

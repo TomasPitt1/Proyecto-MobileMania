@@ -63,6 +63,7 @@ function botonAgregarCarrito() {
                 };
 
                 carrito.push(celularConCantidad);
+            }
                 Toastify({
                     text: "Producto agregado al carrito",
                     duration: 1500,
@@ -77,8 +78,6 @@ function botonAgregarCarrito() {
                         color: "black"
                     },
                 }).showToast();
-            }
-
             localStorage.setItem("productosCarrito", JSON.stringify(carrito));
         };
     });

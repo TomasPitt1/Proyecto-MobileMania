@@ -5,6 +5,9 @@ let storageCarrito = localStorage.getItem("productosCarrito")
 storageCarrito = JSON.parse(storageCarrito)
 
 function renderCarrito(cartItems) {
+  if (cartItems.length === 0) {
+    contenedorBotones.innerHTML = ""
+  }
   cartItems.forEach(celular => {
     const carrito = document.createElement("div")
     carrito.innerHTML = `<img src="${celular.imagen}" alt="${celular.modelo}" class="img-producto">
@@ -94,8 +97,6 @@ function botonCantidad() {
   });
 }
 
-
-
 renderCarrito(storageCarrito)
 
 
@@ -105,8 +106,9 @@ function botonVaciarCarrito() {
   botonVaciar.textContent = "Vaciar Carrito"
 
   botonVaciar.onclick = () => {
-    localStorage.removeItem("productosCarrito");
+    localStorage.setItem("productosCarrito", "[]");
     contenedorCarrito.innerHTML = "";
+    contenedorBotones.innerHTML = "";
     calculoTotal([]);
     Swal.fire({
       title: "Carrito vacio!"
@@ -180,11 +182,14 @@ function botonDeCompra() {
 </ul>
 <p><strong>Total a pagar:</strong> $${total}</p>`,
         icon: 'success'
-      });
+      }).then(() => {
+        localStorage.removeItem("productosCarrito");
+        contenedorCarrito.innerHTML = "";
+        contenedorBotones.innerHTML = "";
+        calculoTotal([]);
+        window.location.href = "/"
+      })
 
-      localStorage.removeItem("productosCarrito");
-      contenedorCarrito.innerHTML = "";
-      calculoTotal([]);
     })
   };
   contenedorBotones.appendChild(botonComprar)
