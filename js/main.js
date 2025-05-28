@@ -83,23 +83,21 @@ function botonAgregarCarrito() {
     });
 }
 
-
-
 function botonCantidad() {
     const botonSumar = document.querySelectorAll(".boton-sumar");
     const botonRestar = document.querySelectorAll(".boton-restar");
 
-    botonSumar.forEach(boton => {
-        boton.onclick = () => {
-            const id = boton.getAttribute("data-id");
+    botonSumar.forEach(button => {
+        button.onclick = () => {
+            const id = button.getAttribute("data-id");
             const contador = document.getElementById(`contador-${id}`);
             contador.textContent = parseInt(contador.textContent) + 1;
         };
     });
 
-    botonRestar.forEach(boton => {
-        boton.onclick = () => {
-            const id = boton.getAttribute("data-id");
+    botonRestar.forEach(button => {
+        button.onclick = () => {
+            const id = button.getAttribute("data-id");
             const contador = document.getElementById(`contador-${id}`);
             const valorActual = parseInt(contador.textContent);
             if (valorActual > 1) {
